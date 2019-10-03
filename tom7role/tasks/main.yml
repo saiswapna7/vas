@@ -13,7 +13,7 @@
 
   - name: additional packages
     apt:
-      name: "{{item}}"
+      name: "{{ item }}"
       state: present
     loop:
       - tomcat7-docs
