@@ -7,21 +7,21 @@
 
 - name: java config
   template:
-      src: javaconfig.j2
-      dest: /etc/default/tomcat7
+     src: javaconfig.j2
+     dest: /etc/default/tomcat7
   notify: tomcat7 restart
 
-  - name: additional packages
-    apt:
-      name: "{{ item }}"
-      state: present
+- name: additional packages
+  apt:
+     name: "{{ item }}"
+     state: present
     loop:
-      - tomcat7-docs
-      - tomcat7-admin
-      - tomcat7-examples
+     - tomcat7-docs
+     - tomcat7-admin
+     - tomcat7-examples
 
-  - name: user mngt
-    template:
-       src: usermngt.j2
-       dest: /etc/tomcat7/tomcat-users.xml   
-    notify:  tomcat7 restart
+- name: user mngt
+  template:
+     src: usermngt.j2
+     dest: /etc/tomcat7/tomcat-users.xml   
+  notify:  tomcat7 restart
