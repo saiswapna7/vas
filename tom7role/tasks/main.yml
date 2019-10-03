@@ -19,8 +19,9 @@
       - tomcat7-docs
       - tomcat7-admin
       - tomcat7-examples
+
   - name: user mngt
     template:
        src: usermngt.j2
        dest: /etc/tomcat7/tomcat-users.xml   
-    notify:  tomcat7 restart  
+    notify:  tomcat7 restart
